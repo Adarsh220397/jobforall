@@ -10,9 +10,6 @@ class SizeUtils {
     screenWidth = boxConstraints.maxWidth;
     screenHeight = boxConstraints.maxHeight;
 
-    print("Screen Width " + screenWidth.toString());
-    print("Screen Height " + screenHeight.toString());
-
     if (orientation == Orientation.portrait) {
       _widthMultiplier = boxConstraints.maxWidth / 100;
       _heightMultiplier = boxConstraints.maxHeight / 100;

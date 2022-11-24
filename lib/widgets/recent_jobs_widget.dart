@@ -111,7 +111,10 @@ class _RecentJobsWidgetState extends State<RecentJobsWidget> {
                                       MediaQuery.of(context).size.width > 600
                                           ? SizeUtils.get(4)
                                           : SizeUtils.get(2.5),
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w500,
+                                  color: widget.bBidderScreen
+                                      ? Colors.black
+                                      : Colors.white),
                             ),
                           ),
                         ),
@@ -142,7 +145,7 @@ class _RecentJobsWidgetState extends State<RecentJobsWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           iconData(
-                              widget.rating,
+                              '${widget.rating.toString()} Bids',
                               Icon(
                                 FontAwesomeIcons.hammer,
                                 color: const Color.fromRGBO(204, 88, 109, 1),
@@ -151,7 +154,7 @@ class _RecentJobsWidgetState extends State<RecentJobsWidget> {
                                     : SizeUtils.get(3.75),
                               )),
                           iconData(
-                              widget.duration,
+                              '${widget.duration} Hours',
                               widget.bBidderScreen
                                   ? Icon(
                                       FontAwesomeIcons.solidEye,
@@ -172,7 +175,7 @@ class _RecentJobsWidgetState extends State<RecentJobsWidget> {
                                           : SizeUtils.get(3.75),
                                     )),
                           iconData(
-                              widget.cost,
+                              widget.cost.toString(),
                               widget.bBidderScreen
                                   ? Icon(
                                       FontAwesomeIcons.solidHeart,
@@ -208,7 +211,7 @@ class _RecentJobsWidgetState extends State<RecentJobsWidget> {
     );
   }
 
-  Widget iconData(num text, Icon icon) {
+  Widget iconData(String text, Icon icon) {
     return Row(
       children: [
         icon,
@@ -216,7 +219,7 @@ class _RecentJobsWidgetState extends State<RecentJobsWidget> {
           width: 5,
         ),
         Text(
-          text.toString(),
+          text,
           style: themeData.textTheme.subtitle1!.copyWith(
               fontSize: SizeUtils.get(3), fontWeight: FontWeight.w500),
         )

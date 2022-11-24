@@ -59,7 +59,7 @@ class _BidderHomeScreenState extends State<BidderHomeScreen> {
               ],
             ),
             body: SafeArea(child: bidderScreenBody()),
-            backgroundColor: Colors.white,
+            backgroundColor: Color.fromRGBO(245, 245, 245, 1),
           );
   }
 

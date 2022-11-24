@@ -74,7 +74,7 @@ class _PosterHomeScreenState extends State<PosterHomeScreen> {
               tab: posterScreenBody(),
               desktop: posterScreenBody(),
             )),
-            backgroundColor: Colors.white);
+            backgroundColor: Color.fromRGBO(245, 245, 245, 1));
   }
 
   onPressBellIcon() async {}
@@ -88,13 +88,21 @@ class _PosterHomeScreenState extends State<PosterHomeScreen> {
           Wrap(
             alignment: WrapAlignment.start,
             crossAxisAlignment: WrapCrossAlignment.start,
+            runSpacing: 25,
+            spacing: 8,
             children: [
               for (AllCategoryModel categories in allCategoriesList)
                 AllCategoriesWidget(
                     image: categories.image, text: categories.title)
             ],
           ),
+          SizedBox(
+            height: 23,
+          ),
           TitleTextWidget(text: 'Popular Bidder'),
+          SizedBox(
+            height: 19,
+          ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
